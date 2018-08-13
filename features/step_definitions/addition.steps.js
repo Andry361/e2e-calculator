@@ -14,12 +14,6 @@ defineSupportCode(function ({ Given, When, Then }) {
         calculatorPage.go('https://www.google.ru/search?q=calculator');
     });
 
-
-    // Given('I go to {string}', function (site, next) {
-    //     calculatorPage.go(site);
-    //     expect(browser.getTitle()).to.eventually.include('calculator').and.notify(next);
-    // });
-
     When('I enter {string}', function (enterNumber) {
         calculatorPage.enter(enterNumber);
     });
