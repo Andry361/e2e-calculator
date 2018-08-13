@@ -4,6 +4,7 @@
   "description": "e2e-calculator",
   "main": "cucumber.conf.js",
   "dependencies": {
+    "@types/protractor": "^4.0.0",
     "xvfb": "0.2.3"
   },
   "devDependencies": {
