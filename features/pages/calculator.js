@@ -2,7 +2,7 @@
 
 module.exports = {
 
-    calculatorPage: {
+    buttons: {
         '0': element(by.css('#cwbt43')),
         '1': element(by.css('#cwbt33')),
         '2': element(by.css('#cwbt34')),
@@ -25,26 +25,26 @@ module.exports = {
     },
 
     enter: function (numberStr) {
-        var calculatorPage = this.calculatorPage;
+        var buttons = this.buttons;
         var result = numberStr.split('');
         result.forEach(number => {
-            browser.actions().mouseUp(calculatorPage[number]).perform();
+            browser.actions().mouseUp(buttons[number]).perform();
         });
     },
 
     clickPlus: function() {
-        var calculatorPage = this.calculatorPage;
-        browser.actions().mouseUp(calculatorPage.plus).perform();
+        var buttons = this.buttons;
+        browser.actions().mouseUp(buttons.plus).perform();
     },
 
     clickEqual: function() {
-        var calculatorPage = this.calculatorPage;
-        browser.actions().mouseUp(calculatorPage.equal).perform();
+        var buttons = this.buttons;
+        browser.actions().mouseUp(buttons.equal).perform();
     },
 
     clickMines: function() {
-        var calculatorPage = this.calculatorPage;
-        browser.actions().mouseUp(calculatorPage.mines).perform();
+        var buttons = this.buttons;
+        browser.actions().mouseUp(buttons.mines).perform();
     },
 
     go: function (site) {
@@ -53,6 +53,6 @@ module.exports = {
     },
 
     clear: function () {
-        browser.actions().mouseUp(calculatorPage.clear).perform();
+        browser.actions().mouseUp(buttons.clear).perform();
     }
 };
