@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "e2e-calculator",
   "main": "cucumber.conf.js",
-  "dependencies": {
-    "@types/protractor": "^4.0.0",
-    "xvfb": "0.2.3"
-  },
   "devDependencies": {
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
@@ -19,9 +15,5 @@
   },
   "scripts": {
     "test": "protractor"
-  },
-  "keywords": [
-    "protractor",
-    "cucumber.js"
-  ]
+  }
 }

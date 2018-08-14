@@ -1,6 +1,6 @@
 // features/step_definitions/addition.steps.js
 var seleniumWebdriver = require('selenium-webdriver');
-var { defineSupportCode, BeforeAll, Before } = require('cucumber');
+var { defineSupportCode, Before } = require('cucumber');
 var calculatorPage = require('../pages/calculator.js');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
@@ -12,6 +12,7 @@ defineSupportCode(function ({ Given, When, Then }) {
 
     Before(function () {
         calculatorPage.go('https://www.google.ru/search?q=calculator');
+        browser.sleep(150);
     });
 
     When('I enter {string}', function (enterNumber) {
@@ -31,7 +32,6 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     Then('I should see {string} in display', function (enterNumber, next) {
-        browser.sleep(50);
         var display = calculatorPage.calculatorPage.display;
         expect(display.getText()).to.eventually.equal(enterNumber).and.notify(next);
     });

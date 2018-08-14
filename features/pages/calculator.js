@@ -24,7 +24,6 @@ module.exports = {
         display: element(by.css('#cwos')),
     },
 
-
     enter: function (numberStr) {
         var calculatorPage = this.calculatorPage;
         var result = numberStr.split('');
@@ -48,25 +47,12 @@ module.exports = {
         browser.actions().mouseUp(calculatorPage.mines).perform();
     },
 
-    clickOneBtn: function (task) {
-        var calculatorPage = this.calculatorPage;
-        browser.actions().mouseUp(calculatorPage.oneBtn).perform();
-    },
-
     go: function (site) {
-        // browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
         browser.get(site);
     },
 
-    addTask: function (task) {
-        var angular = this.angularHomepage;
-        angular.taskList.sendKeys(task);
-    },
-
-    submitTask: function () {
-        var angular = this.angularHomepage;
-        angular.taskButton.click();
+    clear: function () {
+        browser.actions().mouseUp(calculatorPage.clear).perform();
     }
-
 };
