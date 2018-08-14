@@ -11,7 +11,7 @@ gulp.task('protractor', function(callback) {
   gulp
     .src(['features/*.feature'])
     .pipe(gulpProtractorAngular({
-      'configFile': 'cucumber.conf.js',
+      'configFile': 'protractor.conf.js',
       'debug': true,
       'autoStartStopServer': true
     }))
