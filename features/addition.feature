@@ -1,4 +1,3 @@
-#comment
 Feature: Addition
     # TODO: add desc
 

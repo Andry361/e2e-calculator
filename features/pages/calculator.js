@@ -2,7 +2,7 @@
 
 module.exports = {
 
-    buttons: {
+    elements: {
         '0': element(by.css('#cwbt43')),
         '1': element(by.css('#cwbt33')),
         '2': element(by.css('#cwbt34')),
@@ -25,26 +25,31 @@ module.exports = {
     },
 
     enter: function (numberStr) {
-        var buttons = this.buttons;
+        var elements = this.elements;
         var result = numberStr.split('');
         result.forEach(number => {
-            browser.actions().mouseUp(buttons[number]).perform();
+            browser.actions().mouseUp(elements[number]).perform();
         });
     },
 
     clickPlus: function() {
-        var buttons = this.buttons;
-        browser.actions().mouseUp(buttons.plus).perform();
+        var elements = this.elements;
+        browser.actions().mouseUp(elements.plus).perform();
     },
 
     clickEqual: function() {
-        var buttons = this.buttons;
-        browser.actions().mouseUp(buttons.equal).perform();
+        var elements = this.elements;
+        browser.actions().mouseUp(elements.equal).perform();
+    },
+
+    clickMultiply: function() {
+        var elements = this.elements;
+        browser.actions().mouseUp(elements.multiply).perform();
     },
 
     clickMines: function() {
-        var buttons = this.buttons;
-        browser.actions().mouseUp(buttons.mines).perform();
+        var elements = this.elements;
+        browser.actions().mouseUp(elements.mines).perform();
     },
 
     go: function (site) {
@@ -53,6 +58,6 @@ module.exports = {
     },
 
     clear: function () {
-        browser.actions().mouseUp(buttons.clear).perform();
+        browser.actions().mouseUp(elements.clear).perform();
     }
 };

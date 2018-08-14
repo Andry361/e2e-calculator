@@ -1,5 +1,3 @@
-// features/step_definitions/addition.steps.js
-var seleniumWebdriver = require('selenium-webdriver');
 var { defineSupportCode, Before } = require('cucumber');
 var calculatorPage = require('../pages/calculator.js');
 var chai = require('chai');
@@ -8,7 +6,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
-defineSupportCode(function ({ Given, When, Then }) {
+defineSupportCode(function ({ When, Then }) {
 
     Before({ timeout: 30000 }, function (scenario, next) {
         calculatorPage.go('https://www.google.ru/search?q=calculator');
@@ -32,7 +30,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     Then('I should see {string} in display', function (numberStr, next) {
-        var display = calculatorPage.buttons.display;
+        var display = calculatorPage.elements.display;
         expect(display.getText()).to.eventually.equal(numberStr).and.notify(next);
     });
 });
